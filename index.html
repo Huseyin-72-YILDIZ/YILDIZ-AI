@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="description" content="YILDIZ AI - Bilgi Asistanı.Bilgiye kolay ulaşılmasını sağlar">
+    <meta name="theme-color" content="#4a90e2">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="mobile-web-app-capable" content="yes">
+    
+    <title>YILDIZ AI</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="icons/apple-touch-icon.png">
+    
+    <!-- PWA manifest -->
+    <link rel="manifest" href="manifest.json">
+    
+    <!-- Fonts and Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Hakkında Modal -->
+    <div id="aboutModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="logo-large">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-brain"></i>
+                </div>
+                <h2>YILDIZ AI - Wikipedia Asistanı</h2>
+                <button class="close-modal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="about-section">
+                    <h3>Geliştirici</h3>
+                    <p>
+                        <i class="fas fa-code"></i> Hüseyin YILDIZ<br>
+                        <i class="fas fa-calendar"></i> 2025
+                    </p>
+                </div>
+                <div class="about-section">
+                    <h3>Özellikler</h3>
+                    <ul>
+                        <li><i class="fas fa-globe"></i> Çoklu dil desteği (Türkçe, Kürtçe, İngilizce)</li>
+                        <li><i class="fas fa-microphone"></i> Sesli arama</li>
+                        <li><i class="fas fa-history"></i> Sohbet geçmişi</li>
+                        <li><i class="fas fa-image"></i> Görsel arama ve indirme</li>
+                        <li><i class="fas fa-book"></i> Geniş veri ağı</li>
+                        <li><i class="fas fa-mobile-alt"></i> Mobil uyumlu tasarım</li>
+                        <li><i class="fas fa-moon"></i> Karanlık mod desteği</li>
+                        <li><i class="fas fa-tablet-alt"></i> Tablet optimizasyonu</li>
+                    </ul>
+                </div>
+                <div class="about-section">
+                    <h3>Sürüm</h3>
+                    <p>v1.0.0 (2025)</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="app">
+        <!-- Sol Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-brain"></i>
+                </div>
+                <h1>YILDIZ AI</h1>
+            </div>
+            <button class="new-chat-btn">
+                <i class="fas fa-plus"></i>
+                Yeni Sohbet
+            </button>
+            <div class="chats">
+                <div class="chats-header">
+                    <h2>Sohbetler</h2>
+                    <button class="clear-all-btn" title="Tüm sohbetleri sil">
+                        <i class="fas fa-trash"></i>
+                    </button>
+                </div>
+                <div class="chat-list">
+                    <!-- Sohbet listesi dinamik olarak doldurulacak -->
+                </div>
+            </div>
+        </aside>
+
+        <!-- Ana İçerik -->
+        <main class="main-content">
+            <header class="main-header">
+                <button class="toggle-sidebar" title="Menüyü Aç/Kapat">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="chat-info">
+                    <input type="text" class="chat-title" placeholder="Sohbet Başlığı">
+                    <select class="chat-context" title="Sohbet Konusu">
+                        <option value="general">Genel</option>
+                        <option value="science">Bilim</option>
+                        <option value="history">Tarih</option>
+                        <option value="art">Sanat</option>
+                        <option value="tech">Teknoloji</option>
+                    </select>
+                </div>
+                <div class="actions">
+                    <select class="language-select" title="Dil Seçimi">
+                        <option value="tr">Türkçe</option>
+                        <option value="kmr">Kurdî (Kurmancî)</option>
+                        <option value="en">English</option>
+                        <option value="de">Deutsch</option>
+                        <option value="fr">Français</option>
+                        <option value="es">Español</option>
+                    </select>
+                    <button class="about-btn" onclick="document.getElementById('aboutModal').style.display='block'" title="Hakkında">
+                        <i class="fas fa-info-circle"></i>
+                    </button>
+                </div>
+            </header>
+
+            <div class="chat-container">
+                <div class="messages">
+                    <!-- Mesajlar dinamik olarak doldurulacak -->
+                </div>
+                <div class="input-area">
+                    <div class="input-wrapper">
+                        <textarea 
+                            placeholder="Aramak istediğiniz konuyu yazın..." 
+                            rows="1"
+                            aria-label="Mesaj giriş alanı"
+                        ></textarea>
+                        <button class="voice-btn" title="Sesli Arama">
+                            <i class="fas fa-microphone"></i>
+                        </button>
+                    </div>
+                    <button class="send-btn" title="Gönder">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Uygulama Script -->
+    <script src="app.js"></script>
+
+    <!-- Service Worker Registration -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js')
+                    .then(registration => {
+                        console.log('ServiceWorker registration successful');
+                    })
+                    .catch(err => {
+                        console.log('ServiceWorker registration failed: ', err);
+                    });
+            });
+        }
+    </script>
+</body>
+</html>
